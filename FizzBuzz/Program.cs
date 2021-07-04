@@ -7,35 +7,30 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i <= 100; i++)
+
+            int count = 100;
+            //int step = 15;
+            string[] arrStr = new string[count];
+            for (int i = 1; i <= count; ++i)
             {
-                
-                if (i % 15 == 0) WriteLine();
 
-                
+                arrStr[i-1] = Convert.ToString(i);
 
-                if (i == 100)
+                if ((i % 5) == 0 && (i % 3) == 0)
                 {
-                    Console.Write($"{i}.");
+                    arrStr[i-1] = "FizzBuzz";
                 }
-                else
+                else if (i % 3 == 0)
                 {
-                    if ((i % 5) == 0 && (i % 3) == 0)
-                    {
-                        Console.Write("FizzBuzz, ");
-                    }
-                    else if ((i % 3 == 0))
-                    {
-                        Console.Write("Fizz, ");
-                    }
-                    else if ((i % 5 == 0))
-                    {
-                        Console.Write("Buzz, ");
-                    }
-                    else
-                        Console.Write($"{i}, ");
+                    arrStr[i-1] = "Fizz";
                 }
+                else if (i % 5 == 0)
+                {
+                    arrStr[i-1] = "Buzz";
+                }
+
             }
+            WriteLine(string.Join(", ", arrStr) + ".");
 
         }
     }
