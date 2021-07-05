@@ -7,13 +7,8 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i <= 100; i++)
+            for (int i = 1; i <= 100; ++i)
             {
-
-                if (i % 15 == 0) WriteLine();
-
-
-
                 if (i == 100)
                 {
                     Console.Write($"{i}.");
@@ -35,6 +30,7 @@ namespace FizzBuzz
                     else
                         Console.Write($"{i}, ");
                 }
+                if (i % 15 == 0) WriteLine();
             }
 
         }
